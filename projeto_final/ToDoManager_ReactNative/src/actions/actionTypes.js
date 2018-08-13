@@ -1,0 +1,4 @@
+export const CLICK_EDIT_TASK = 'CLICK_EDIT_TASK';
+
+export const CLICK_ADD_TASK = 'CLICK_ADD_TASK';
+export const CLICK_LOGIN_APP = 'CLICK_LOGIN_APP';
