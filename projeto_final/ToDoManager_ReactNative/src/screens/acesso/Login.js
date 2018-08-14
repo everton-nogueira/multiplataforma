@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { View, Image, TextInput, Button, StyleSheet, KeyboardAvoidingView, Alert, Text } from 'react-native';
 import { signInOnFirebase } from '../../services/FirebaseApi';
+import { observer } from 'mobx-react';
   
 const img = require('../../assets/TodoList.png');
 
-export default class Login extends Component {
+class Login extends Component {
 
     static navigationOptions = {
         header: null
@@ -45,9 +46,10 @@ export default class Login extends Component {
                 Alert.alert("Failed Login", error.message);
             });
     }
-
-    
 }
+
+export default observer(Login)
+
 
 const styles = StyleSheet.create({
     container: {
