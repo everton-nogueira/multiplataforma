@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Image, SectionList } from 'react-native';
 import { readTasksOnFirebase } from '../services/FirebaseApi';
+import { connect } from 'net';
 
 const imgPlus = require('../assets/plus_64.png');
 const imgChecklist = require('../assets/checklist.png');
 
-export default class ToDoList extends Component {
+class ToDoList extends Component {
 
     static navigationOptions = {
         tabBarLabel: 'To Do',
@@ -84,6 +85,9 @@ export default class ToDoList extends Component {
         this.setState({tasks: tasks});
     }
 }
+
+const ToDoListComponent = connect(mapStateToProps, mapDispatchToProps)(ToDoList);
+export default ToDoListComponent;
 
 const styles = StyleSheet.create({
     container: {
